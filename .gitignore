@@ -1,0 +1,39 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+flask_env/
+tf219_env/
+
+# Model files
+*.keras
+*.h5
+*.pkl
+
+# Java / Spring Boot
+target/
+*.class
+.idea/
+.vscode/
+out/
+*.iml
+
+# macOS
+.DS_Store
+
+# Data / test assets
+DATASET/
+TESTING/
+*.zip
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# Logs
+*.log

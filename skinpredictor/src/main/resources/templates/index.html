@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <title>Skin Predictor</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Skin Predictor</h1>
+        <p>Upload a skin image for prediction.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <div th:if="${message}">
+            <p th:text="${message}"></p>
+        </div>
+
+        <div th:if="${fileName}">
+            <p>Uploaded Image: <span th:text="${fileName}"></span></p>
+        </div>
+
+        <div th:if="${label}">
+            <h2>Prediction Result</h2>
+            <p>Label: <span th:text="${label}"></span></p>
+            <p>Score: <span th:text="${score}"></span></p>
+            <p>Threshold: <span th:text="${threshold}"></span></p>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <title>Skin Predictor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            body {
+                background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+                color: #f8fafc;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 700px;
+                background-color: rgba(17, 24, 39, 0.95);
+                border: 1px solid #334155;
+                border-radius: 18px;
+                padding: 35px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 38px;
+                margin-bottom: 10px;
+                color: #38bdf8;
+            }
+
+            .subtitle {
+                text-align: center;
+                color: #cbd5e1;
+                margin-bottom: 30px;
+                font-size: 17px;
+            }
+
+            form {
+                background-color: #1e293b;
+                border: 1px solid #334155;
+                border-radius: 14px;
+                padding: 25px;
+                margin-bottom: 25px;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            input[type="file"] {
+                padding: 12px;
+                background-color: #0f172a;
+                color: #e2e8f0;
+                border: 1px solid #475569;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            button {
+                background-color: #38bdf8;
+                color: #0f172a;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #0ea5e9;
+            }
+
+            .message-box {
+                margin-top: 15px;
+                padding: 14px;
+                border-radius: 10px;
+                background-color: #1d4ed8;
+                color: white;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+
+            .file-box {
+                margin-bottom: 20px;
+                padding: 14px;
+                border-radius: 10px;
+                background-color: #111827;
+                border: 1px solid #374151;
+                color: #e5e7eb;
+            }
+
+            .result-card {
+                background-color: #1e293b;
+                border: 1px solid #334155;
+                border-radius: 14px;
+                padding: 25px;
+                margin-top: 10px;
+            }
+
+            .result-card h2 {
+                margin-bottom: 18px;
+                color: #f8fafc;
+                font-size: 28px;
+            }
+
+            .result-row {
+                margin-bottom: 12px;
+                font-size: 18px;
+                color: #dbeafe;
+            }
+
+            .label-badge {
+                display: inline-block;
+                padding: 8px 16px;
+                border-radius: 999px;
+                font-weight: bold;
+                font-size: 15px;
+                margin-left: 8px;
+            }
+
+            .acne {
+                background-color: #7f1d1d;
+                color: #fecaca;
+                border: 1px solid #ef4444;
+            }
+
+            .clear {
+                background-color: #14532d;
+                color: #bbf7d0;
+                border: 1px solid #22c55e;
+            }
+
+            .score-value,
+            .threshold-value {
+                color: #facc15;
+                font-weight: bold;
+            }
+
+            @media (max-width: 600px) {
+                .container {
+                    padding: 22px;
+                }
+
+                h1 {
+                    font-size: 30px;
+                }
+
+                .result-row {
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Skin Predictor</h1>
+            <p class="subtitle">Upload a skin image for acne prediction</p>
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" name="image" accept="image/*" required>
+                    <button type="submit">Upload Image</button>
+                </div>
+            </form>
+
+            <div th:if="${message}" class="message-box">
+                <p th:text="${message}"></p>
+            </div>
+
+            <div th:if="${fileName}" class="file-box">
+                <p><strong>Uploaded Image:</strong> <span th:text="${fileName}"></span></p>
+            </div>
+
+            <div th:if="${label}" class="result-card">
+                <h2>Prediction Result</h2>
+
+                <div class="result-row">
+                    <strong>Label:</strong>
+                    <span th:if="${label == 'Acne'}" class="label-badge acne" th:text="${label}"></span>
+                    <span th:if="${label == 'Clear'}" class="label-badge clear" th:text="${label}"></span>
+                </div>
+
+                <div class="result-row">
+                    <strong>Score:</strong>
+                    <span class="score-value" th:text="${#numbers.formatDecimal(score, 1, 4)}"></span>
+                </div>
+
+                <div class="result-row">
+                    <strong>Threshold:</strong>
+                    <span class="threshold-value" th:text="${threshold}"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> -->
