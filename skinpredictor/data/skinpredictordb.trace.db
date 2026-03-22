@@ -1,0 +1,21 @@
+2026-03-21 21:08:31.821571-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:08:44.153994-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:08:44.999951-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:08:46.116734-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:08:54.684923-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:08:55.799925-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
+2026-03-21 21:09:26.750224-04:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]SQL*FROM prediction_records"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SQL*FROM prediction_records [42001-232]
