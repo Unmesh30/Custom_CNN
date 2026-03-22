@@ -11,6 +11,7 @@ tf219_env/
 
 # Model files
 *.keras
+!ML_SERVICES/best_acne_model_v2.keras
 *.h5
 *.pkl
 
